@@ -1,0 +1,27 @@
+
+.navbar {
+    justify-content: center;
+}
+
+#searchBtn span {
+    background-color: white;
+}
+
+.forecast {
+    font-size: 1.1vw;
+}
+
+@media screen and (max-width: 768px) {
+
+    .forecast {
+        font-size: 0.8vw;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+    .forecast {
+        font-size: x-large;
+    }
+}

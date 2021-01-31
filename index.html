@@ -3,37 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- font awesome link-->
-    <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
-    <!-- bootstrap link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- style sheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
-<body>
+<body class="flex-column">
+    <nav class="navbar navbar-dark bg-dark">
+        <h1 class="text-white">Weather Dashboard</h1>
+    </nav>
 
-    <!-- Main heading -->
-    <div class="bg-dark pt-2 pb-2"> 
-        <div class="container">
-            <h1 class="text-center text-white">Weather Dashboard</h1>
-        </div>
-    </div>
-    
+    <main class="container">
 
-    <!-- container -->
-    <div class="container-fluid"> 
-        <div class="row"> 
-            <div class="col-lg-3 bg-light pt-3 pb-3"> 
-                <h5>Search for a city:</h5>
-                <!-- input group -->
-                <div class="input-group mb-3"> 
-                    <input id="searchTerm" type="text" class="form-control" placeholder="City name..." class="input-group-append">
-                    <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2"><i class="far fa-search"></i></button>
+        <div class="row">
+            
+            <!-- left column for search -->
+            <div class="col-sm-4">
+
+                <!-- search -->
+                <h3>Search for a City:</h3>
+                
+                <div class="input-group mb-3">
+                    <input id="searchCity" placeholder="Search City" type="text" autofocus="true" class="form-control" />
+                    <div class="input-group-append">
+                        <button id="searchBtn" class="btn btn-primary" type="button" id="button-addon2">
+                            <i class="oi oi-magnifying-glass"></i>                     
+                        </button>
+                    </div>
                 </div>
 
+                <!-- card with empty list -->
+
+                <div class="card">
+                    <button class=" btn btn-primary" type="button" id="clearBtn">Clear history</button>
+
+                    <ul class="list-group list-group-flush list">
+
+                    </ul>
+                </div>  
+            </div>
+
+            <!-- right column for results -->
+            <div class="col-sm-8 mt-2 d-none" id="right-col"> 
+                <div class="row ml-2 border border-dark rounded">
+                    <div class="col-sm-12" id="current-weather">
+                        <h3 class="city-name mb-1 mt-1 bolder" id="currentCity"></h3>
+                        <p>Temperature: <span class="current" id="temperature"></span></p>
+                        <p>Humidity: <span class="current" id="humidity"></span></p> 
+                        <p>Wind Speed: <span class="current" id="windSpeed"></span></p>
+                        <p>UV index: <span class="current rounded py-2 px-2 text-white" id="uvIndex"></span></p> 
+                    </div>
+                </div>
+                <!-- new row for forecast -->
+                <div class="col-sm-12" id ="future-weather">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="row text-white">
+                        <div class="col-sm-2 bg-primary forecast text-white ml-1 mb-3 p-1 mt-2 rounded" >
+                            <p id="forecastDate0"></p>
+                            <p id="forecastImg0"></p>
+                            <p>Temp:<span id="forecastTemp0"></span></p>
+                            <p>Humidity:<span id="forecastHumidity0"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-1 mb-3 p-1 mt-2 rounded" >
+                            <p id="forecastDate1"></p>
+                            <p id="forecastImg1"></p>
+                            <p>Temp:<span id="forecastTemp1"></span></p>
+                            <p>Humidity:<span id="forecastHumidity1"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-1 mb-3 p-1 mt-2 rounded">
+                            <p id="forecastDate2"></p>
+                            <p id="forecastImg2"></p>
+                            <p>Temp:<span id="forecastTemp2"></span></p>
+                            <p>Humidity:<span id="forecastHumidity2"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-1 mb-3 p-1 mt-2 rounded">
+                            <p id="forecastDate3"></p>
+                            <p id="forecastImg3"></p>
+                            <p>Temp:<span id="forecastTemp3"></span></p>
+                            <p>Humidity:<span id="forecastHumidity3"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-1 mb-3 p-1 mt-2 rounded" >
+                            <p id="forecastDate4"></p>
+                            <p id="forecastImg4"></p>
+                            <p>Temp:<span id="forecastTemp4"></span></p>
+                            <p>Humidity:<span id="forecastHumidity4"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
