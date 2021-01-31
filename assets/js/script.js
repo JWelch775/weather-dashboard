@@ -244,6 +244,7 @@ function clearHistory(event)
     }
 
 $("#searchBtn").on("click",displayWeather);
+$("#search-form").on("submit", displayWeather);
 $("#searchBtn").on("click",addToList);
 $(document).on("click",changeCity);
 $(window).on("load",loadlastCity);
