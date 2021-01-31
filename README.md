@@ -26,4 +26,4 @@ The JavaScript also relys on JQuery and Moment.js
 
 Screenshot
 
-![alt text](assets/images/weather-dashboard-img)
+![weather-dashboard-img](./assets/images/weather-dashboard-img.png)
